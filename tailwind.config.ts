@@ -8,11 +8,31 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        grotesk: ['Space Grotesk', 'sans-serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        wavy: {
+          '0%': { transform: 'scale(0.8)' },
+          '50%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(0.8)' },
+        },
+      },
+      animation: {
+        wavy: 'wavy 3s ease-in-out infinite',
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            lineHeight: '0.25',
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 } satisfies Config;
